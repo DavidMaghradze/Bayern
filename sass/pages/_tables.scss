@@ -1,0 +1,201 @@
+.tables {
+    margin-bottom: 30px;
+
+    &__header {
+        box-shadow: 0 0 4px rgba(0,0,0,.1);
+        margin-bottom: 20px;
+        position: relative;
+        border-radius: 2px;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 32px;
+            bottom: -10px;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-top: 10px solid $secondary-color;        
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 3%;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+
+        }
+
+        li {
+            padding: 30px;
+            cursor: pointer;
+
+            &:first-child {
+                margin-left: 45px;
+            }
+
+            &:not(:last-child) {
+                border-right: 1px solid $border-color;
+            }
+        }
+
+        .active {
+            color: $secondary-color;
+            position: relative;
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 70%;
+                height: 3px;
+                background: $secondary-color;
+            }
+        }
+    }
+
+    &__header-toggle {
+        display: none;
+    }
+
+    &__content {
+        width: 100%;
+        box-shadow: 0 0 4px rgba(0,0,0,.1);
+
+        thead {
+            background: $title-main-color;
+            color: $main-color;
+        }
+
+        tbody {
+            tr:nth-child(even) {
+                background: $tables-row-bg;
+            }
+
+            tr {
+                span {
+                    display: inline-block;
+                    margin-left: 15px;
+                    margin-bottom: -1px;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                }
+
+                .tables__draw {
+                    background: $register-color;
+                }
+
+                .tables__win {
+                    background: $matches-preview-color;
+                }
+                
+                .tables__lost {
+                    background: $secondary-color;
+                }
+
+                .tables__default {
+                    background: #c2c2c2;
+                }
+            }
+        }
+
+        th, td {
+            text-align: center;
+        }
+
+        th {
+            padding-top: 30px;
+            padding-bottom: 30px;
+
+            &:not(:last-child) {
+                border-right: 1px solid lighten($title-main-color, 10%);
+            }
+        }
+
+        td {
+            padding-top: 25px;
+            padding-bottom: 25px;
+
+            &:not(:last-child) {
+                border-right: 1px solid $border-color;
+            }
+        }
+    }
+}
+
+@media(max-width:576px) {
+    .tables {
+        &__header {
+            text-align: center;
+            padding-top: 15px;
+
+            &:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            img {
+                position: initial;
+            }
+
+            ul {
+                display: initial;
+
+                li {
+                    position: relative;
+                    padding: 10px;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+
+                .active {
+                    &:after {
+                        display: none;
+                    }
+                }
+                
+            }
+        }
+
+        &__header-toggle {
+            cursor: pointer;
+            padding: 20px;
+            display: block;
+            position: absolute;
+            color: $secondary-color;
+            top: 41%;
+            right: 15%;
+            // transition: transform .3s;
+        }
+
+        &__header-toggle-animation {
+            transform: rotate(180deg);
+        }
+
+        .top20 {
+            top: 20%;
+        }
+
+        &__content {
+            thead tr th:nth-child(4), thead tr th:nth-child(3) {
+                display: none;
+            }
+
+            tbody tr td:nth-child(3), tbody tr td:nth-child(2) {
+                display: none;
+            }
+        }
+    }
+}

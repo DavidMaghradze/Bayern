@@ -1,0 +1,89 @@
+.table {
+
+    margin-bottom: 20px;
+
+    &__inner {
+        padding: 20px;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 8px;
+        border-bottom: 1px solid $border-color;
+
+        span:first-child {
+            margin-right: 8px;
+        }
+    }
+
+    &__games {
+        margin-right: 12px !important;
+    }
+
+    &__wins {
+        margin-right: 5px !important;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+        color: #999999;
+
+        span:first-child {
+            margin-right: 8px;
+        }
+
+        &:first-child {
+            color: $secondary-color;
+
+            .table__team {
+                border-left: 3px solid $secondary-color;
+            }
+        }
+
+        &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+            color: #3f4b95;
+
+            .table__team {
+                border-left: 3px solid #3f4b95;
+            }
+        }
+
+        &:nth-child(5), &:nth-child(6) {
+            color: #63a4d6;
+
+            .table__team {
+                border-left: 3px solid #63a4d6;
+            }
+        }
+    }
+
+    &__position {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 20px;
+            height: 20px;
+            margin: 0 10px;
+        }
+    }
+
+    &__rank {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        background: $border-color;
+        border-radius: 50%;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    &__team {
+        padding: 5px 10px;
+        color: $title-main-color;
+        border-left: 3px solid #999999;
+    }
+}

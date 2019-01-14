@@ -1,0 +1,28 @@
+@import 'abstracts/animations';
+@import 'abstracts/variables';
+
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'components/buttons';
+@import 'components/matches';
+@import 'components/titles';
+
+@import 'layout/header';
+@import 'layout/topnav';
+@import 'layout/slider';
+@import 'layout/matches';
+@import 'layout/news';
+@import 'layout/players';
+@import 'layout/absents';
+@import 'layout/table';
+@import 'layout/poll';
+@import 'layout/blog';
+@import 'layout/videos';
+@import 'layout/footer';
+
+@import 'pages/tables';
+@import 'pages/club';
+@import 'pages/squad';
+@import 'pages/register';
+@import 'pages/full-story';

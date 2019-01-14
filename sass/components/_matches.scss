@@ -1,0 +1,299 @@
+.matches {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/aa.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &--default {
+        height: initial;
+        background: $main-color;
+        margin-bottom: 20px;
+
+        &:before {
+            display: none !important;
+        }
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.8);
+    }
+
+    &__header {
+        padding: 20px 19px;
+        border-bottom: 1px solid rgba(255,255,255,.3);
+        position: relative;
+        text-align: center;
+
+        span {
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 30px;
+
+            .circle {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+
+                &--next {
+                    background: $matches-preview-color;
+                }
+
+                &--prev {
+                    background: $secondary-color;
+                }
+            }
+        }
+
+        .active {
+            background: rgba(255,255,255,.3);
+        }
+
+        &--default {
+            padding: 20px 10px;
+            border-bottom: 1px solid $border-color;
+
+            .active {
+                background: $main-color;
+            }
+        }
+    }
+
+    &__header-next {
+        &--default {
+            color: $matches-preview-color;
+        }
+    }
+
+    &__header-prev {
+        &--default {
+            color: $secondary-color;
+        }
+    }
+
+    &__header-inner {
+        z-index: 2;
+        color: $main-color;
+        padding: 15px 10px;
+        background: rgba(255,255,255,.2);
+        border-radius: 30px;
+
+        &--default {
+            background: $body-bg;
+            padding: 15px 0;
+        }
+    }
+
+    &__inner {
+        position: relative;
+        height: 100%;
+        z-index: 4;
+    }
+
+    &__card {
+        &--prev {
+            display: none;
+        }
+    }
+
+    &__card-match {
+        display: flex;
+        padding: 20px 0;
+        justify-content: center;
+
+        &--default {
+            padding-top: 0;
+        }
+    }
+
+    &__card-content {
+        color: $main-color;
+        margin: 20px 10px;
+        border: 1px solid rgba(255,255,255,.3);
+        border-radius: 2px;
+
+        &--default {
+            color: $title-main-color;
+        }
+    }
+
+    &__card-team {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 33.333333%;
+        text-align: center;
+
+        &--default {
+            width: 30%;
+        }
+    }
+
+    &__card-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 1px solid rgba(255,255,255,.3);
+        margin-bottom: 10px;
+
+        img {
+            width: 60px;
+            height: 60px;
+        }
+
+        &--default {
+            border: 1px solid $border-color;
+            position: relative;
+            margin-bottom: 20px;
+
+            &:after {
+                position: absolute;
+                content: '';
+                display: block;
+                bottom: -10px;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 10px solid $border-color;
+            }
+        }
+    }
+
+    &__card-info {
+        margin: 25px 5px 0 5px;
+        text-align: center;
+        font-size: $small-fs;
+    }
+
+    &__card-vs {
+        border-radius: 30px;
+        background: $main-color;
+        color: #000000;
+        padding: 10px 20px;
+        font-size: $title-fs;
+
+        &--default {
+            border: 1px solid $border-color;
+
+            &--v {
+                color: $secondary-color;
+            }
+        }
+    }
+
+    &__card-date {
+        display: inline-block;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    &__card-stadium {
+        
+        img {
+            margin-top: -5px;
+            margin-right: 5px;
+        }
+    }
+
+    &__card-footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 20px;
+        border-top: 1px solid rgba(255,255,255,.3);
+
+        .preview {
+            a {
+                color: $matches-preview-color;
+            }
+        }
+
+        &--default {
+            border-top: 1px solid $border-color;
+        }
+    }
+}
+
+@media(max-width: 1200px) {
+    .matches__header {
+        font-size: $small-fs;
+        padding: 20px 6px;
+    }
+}
+
+@media(min-width: 992px) and (max-width: 1200px) {
+    .matches {
+        &__header {
+            &--default {padding: 20px 2px};
+        }
+    }
+}
+
+@media(min-width: 768px) and (max-width: 992px) {
+
+    .matches {
+        &__header {
+            display: flex;
+            justify-content: center;
+            padding: 20px 75px;
+        }
+
+        &__header-inner {
+            width: 60%;
+        }
+
+        &__inner {
+            display: flex;
+            justify-content: center;
+        }
+
+        &__card {
+            width: 80%;
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .matches__inner {
+        height: initial;
+    }
+}
+
+@media(max-width: 768px) {
+    .matches__header {
+        display: none;
+    }
+
+    .matches__inner {
+        padding-top: 1px;
+    }
+
+    .matches__card-content {
+        img {
+            display: inline-block !important;
+        }
+    }
+}
+
+@media(max-width: 400px) {
+    .matches__card-content {
+        margin: 8px;
+    }
+
+    .matches__card-match {
+        padding: 10px 5px;
+    }
+
+    .matches__card-footer {
+        padding: 15px 10px;
+    }
+}

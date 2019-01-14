@@ -1,0 +1,211 @@
+@font-face {
+    font-family: main;
+    src: url('../../fonts/robogo_geomt_0.ttf');
+}
+
+@font-face {
+    font-family: secondary;
+    src: url('../../fonts/bpg_arial_0.ttf');
+}
+
+body {
+    font-family: main;
+    font-size: $main-fs;
+}
+
+.header, .topnav {
+    font-size: $top-fs;
+
+    &__search {
+        font-size: $article-fs;
+    }
+}
+
+.slider {
+    &__title {
+        font-size: $slider-title-fs;
+
+        &--indicator {
+            font-size: $main-fs;
+        }
+    }
+}
+
+.matches {
+    &__card-title {
+        font-size: $title-fs;
+
+        &--default {
+            font-size: $main-fs;
+        }
+    }
+
+    &__header-inner--default {
+        font-size: $article-fs;
+    }
+}
+
+.main {
+    &__header-title {
+        font-size: $top-fs;
+    }
+
+    .news {
+        &__content {
+            font-size: $article-fs;
+        }
+
+        &__title {
+            font-size:  $title-fs;
+            font-weight: bold;
+        }
+
+        &__article {
+            font-family: secondary;
+        }
+    }
+
+    .blog {
+        &__title {
+            font-size: $main-fs;
+
+            &--small {
+                font-size: $article-fs;
+            }
+        }
+    }
+
+    .videos {
+        &__title {
+            font-size: $small-fs;
+        }
+    }
+
+    .players {
+        &__title {
+            font-size: $main-fs;
+        }
+    }
+
+    .absents {
+        &__header-title {
+            font-size: $top-fs;
+        }
+    }
+
+    .table {
+        &__team {
+            font-size: $main-fs;
+        }
+    }
+
+    .poll {
+        &__title {
+            font-size: $main-fs;
+        }
+    }
+}
+
+// Club Page
+.club {
+    &__item-title {
+        font-size: $main-fs;
+    }
+}
+
+// Squad page
+.squad {
+    &__header-title {
+        font-size: $top-fs;
+    }
+
+    &__number {
+        font-size: $slider-title-fs;
+    }
+
+    &__info {
+        font-size: $article-fs;
+    }
+
+    &__title {
+        font-size: $main-fs;
+    }
+
+    &__coach-header {
+        font-size: 24px;
+    }
+
+    &__coach-title {
+        font-size: 36px;
+    }
+}
+
+// Register page
+.register {
+    &__welcome-title {
+        font-size: $main-fs
+    }
+
+    &__welcome-content, &__chekusername {
+        font-size: $small-fs;
+    }
+}
+
+@media(min-width: 992px) and (max-width: 1200px) {
+    .matches {
+        &__header-inner {
+            &--default {font-size: 11px};
+        }
+    }
+
+    .players {
+        font-size: $small-fs;
+
+        &__title {
+            font-size: $small-fs !important;
+        }
+    }
+}
+
+// Full Story page
+.full-story {
+    &__content {
+        font-size: $article-fs;
+        font-family: secondary;
+    }
+}
+
+// Comoments
+.comments {
+    &__title, &__author {
+        font-size: $article-fs;
+    }
+
+    &__comment {
+        font-size: $article-fs;
+        font-family: secondary;
+    }
+}
+
+@media(max-width: 768px) {
+    .slider {
+        &__title {
+            font-size: 22px;
+        }
+    }
+
+    .videos {
+        &__title {
+            padding: 20px !important;
+            font-size: $title-fs !important;
+        }
+    }
+}
+
+@media(max-width: 400px) {
+    .mathces {
+        &__card-date {
+            font-size: $small-fs !important;
+        }
+    }
+}

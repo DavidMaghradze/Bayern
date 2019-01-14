@@ -1,0 +1,122 @@
+button {
+    border: none;
+    outline: none;
+}
+
+.header {
+    &__button {
+        color: $main-color;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px rgba(0,0,0,.3);
+        display: block;
+
+        i {
+            margin-right: 8px;
+            padding: 6px;
+            border-radius: 50%;
+            font-size: $article-fs;
+        }
+
+        &:hover {
+            color: $main-color;
+        }
+
+        &--auth {
+            background: $secondary-color;
+            margin-bottom: 15px;
+
+            i {
+                background: darken($secondary-color, 10%);
+            }
+        }
+
+        &--register {
+            background: $register-color;
+
+            i {
+                background: darken($register-color, 10%);
+            }
+        }
+    }
+
+    .modal__footer {
+        display: flex;
+        justify-content: space-between;
+        &__btn {
+            cursor: pointer;
+            width: 48%;
+            border: none;
+            padding: 20px;
+            border-radius: 5px;
+            color: $main-color;
+            display: block;
+            text-align: center;
+
+            &--login {
+                background: $matches-preview-color;
+            }
+
+            &--register {
+                background: $secondary-color;
+            }
+        }
+    }
+}
+
+.main {
+    &__news-footer {
+        padding: 15px;
+        border: 1px solid $border-color;
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .news {
+        .more {
+            color: $secondary-color;
+        }
+    }
+}
+
+
+.register {
+    &__chekusername {
+        position: absolute;
+        top: 35%;
+        right: 10px;
+        background: $secondary-color;
+        border-radius: 5px;
+        color: $main-color;
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    &__submit {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        background: #2e6abd;
+        border-radius: 5px;
+        color: $main-color;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover {
+            background: darken(#2e6abd, 10%);
+        }
+    }
+}
+
+@media(max-width: 576px) {
+    .register {
+        &__chekusername {
+            top: inherit;
+            bottom: -20px;
+            left: 0;
+        }
+    }
+}

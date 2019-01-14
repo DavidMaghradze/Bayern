@@ -1,0 +1,40 @@
+.main {
+    &__header {
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $border-color;
+
+        &--news, &--squad {
+            position: relative;
+        border: 1px solid $border-color;
+        border-radius: 2px;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid $secondary-color;
+            bottom: -8px;
+        }
+        }
+    }
+
+    &__header-title {
+        margin-left: 10px;
+        color: $title-main-color;
+
+        span {
+            color: $secondary-color;
+        }
+    }
+}
+@media(max-width: 768px) {
+    .main {
+        &__header {
+            justify-content: center;
+        }
+    }
+}

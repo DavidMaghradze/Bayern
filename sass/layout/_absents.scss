@@ -1,0 +1,41 @@
+.absents {
+    margin: 20px 0;
+
+    .main__header-title {
+        color: #eca238;
+    }
+
+    &__content {
+        margin: 20px;
+        border: 1px solid $border-color;
+        border-radius: 2px;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid $border-color;
+
+        img {
+            margin-right: 10px;
+            margin-top: -5px;
+        }
+    }
+
+    &__item {
+        margin: 20px;
+        border: 1px solid $border-color;
+        border-radius: 2px;
+
+        img {
+            padding: 10px;
+            margin-right: 5px;
+            border-right: 1px solid $border-color;
+        }
+    }
+
+    .noplayers {
+        border: none;
+    }
+}

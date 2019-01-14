@@ -1,0 +1,56 @@
+.footer {
+    background-image: url('img/footer-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 35px;
+
+    &__item {
+        float: right;
+        color: $main-color;
+        
+        span {
+            display: inline-block;
+            width: 108px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: rgba(255,255,255,.1);
+            border: 1px solid #3e3e4c;
+            border-radius: 2px;
+            transition: all .3s ease-in-out;
+            margin-right: 15px;
+
+            &:hover {
+                background: rgba(255,255,255,.2);
+                border: 1px solid #3e3e4c;
+            }
+
+            i {
+                margin-right: 5px;
+            }
+        }
+
+        a {
+            color: $main-color;
+        }
+
+        img {
+            margin-top: -5px;
+        }
+    }
+}
+
+@media(max-width: 576px) {
+    .footer {
+        text-align: center;
+        &__item {
+            float: none !important;
+            margin-top: 30px;
+
+            a:first-child {
+                display: block;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

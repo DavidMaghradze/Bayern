@@ -1,0 +1,18 @@
+{
+  "name": "bayern",
+  "version": "1.0.0",
+  "description": "FC Bayern Munich Fan Club",
+  "main": "index.js",
+  "scripts": {
+    "compile-sass": "node-sass sass/main.scss style.css -ws"
+  },
+  "keywords": [
+    "FC",
+    "Bayern"
+  ],
+  "author": "David Maghradze",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.10.0"
+  }
+}
