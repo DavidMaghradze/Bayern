@@ -59,11 +59,11 @@ body {
 
 @font-face {
   font-family: main;
-  src: url("../../fonts/robogo_geomt_0.ttf"); }
+  src: url("fonts/robogo_geomt_0.ttf"); }
 
 @font-face {
   font-family: secondary;
-  src: url("../../fonts/bpg_arial_0.ttf"); }
+  src: url("fonts/bpg_arial_0.ttf"); }
 
 body {
   font-family: main;
