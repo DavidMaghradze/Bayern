@@ -93,6 +93,13 @@
     }
 }
 
+.news-page {
+    .news__item {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+}
+
 @media(max-width: 768px) {
     .news {
         margin-top: 50px;

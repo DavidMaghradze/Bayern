@@ -132,11 +132,6 @@
             .fa-pen-square {
                 color: $secondary-color;
             }
-
-            &:last-child {
-                color: $matches-preview-color;
-                float: right;
-            }
         }
 
         .fa-thumbs-up {
@@ -144,6 +139,16 @@
             margin-top: 2px;
             color: initial
         }
+    }
+
+    &__answer {
+        cursor: pointer;
+    }
+
+
+    &__like {
+        color: $matches-preview-color;
+        float: right;
     }
 
     &__content-header {
@@ -171,6 +176,47 @@
 
     &__comment {
         padding: 30px;
+    }
+}
+
+// Add Comments section
+.add-comments {
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+
+    &__header {
+        padding: 20px;
+        border-bottom: 1px solid $border-color;
+    }
+
+    &__header-item {
+        font-size: 13px;
+        display: inline-block;
+        padding: 10px;
+        cursor: pointer;
+
+        > i {
+            margin-right: 5px;
+        }
+
+        &:first-child {
+            margin-right: 10px;
+        }
+    }
+
+    .active {
+        border: 1px solid $border-color;
+        border-radius: 20px;
+    }
+
+    .add-comments__header > {
+        .facebook {
+            color: #3b5998;
+            font-weight: bold;
+        }
+    }
+
+    &__content {
+        margin: 20px;
     }
 }
 
@@ -223,6 +269,13 @@
 
         &__comment {
             padding: 15px;
+        }
+    }
+
+    .add-comments {
+
+        &__header {
+            text-align: center;
         }
     }
 }

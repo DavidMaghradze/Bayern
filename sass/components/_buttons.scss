@@ -52,13 +52,22 @@ button {
             color: $main-color;
             display: block;
             text-align: center;
+            transition: all .3s;
 
             &--login {
                 background: $matches-preview-color;
+
+                &:hover {
+                    background: darken($matches-preview-color, 10%);
+                }
             }
 
             &--register {
                 background: $secondary-color;
+
+                &:hover {
+                    background: darken($secondary-color, 10%);
+                }
             }
         }
     }
@@ -93,6 +102,11 @@ button {
         color: $main-color;
         padding: 8px;
         cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+            background: darken($secondary-color, 5%);
+        }
     }
 
     &__submit {
@@ -108,6 +122,19 @@ button {
         &:hover {
             background: darken(#2e6abd, 10%);
         }
+    }
+}
+
+.comment__submit {
+    background: $blue-color;
+    padding: 8px;
+    border-radius: 5px;
+    color: $main-color;
+    transition: .2s;
+
+    &:hover {
+        color: $main-color;
+        background: darken($blue-color, 10%);
     }
 }
 

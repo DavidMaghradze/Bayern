@@ -14,8 +14,8 @@
         border-radius: 2px;
     }
 
-    &__answers {
-        margin: 20px 0;
+    &__answers, &__buttons {
+        margin-top: 20px;
     }
 
     .radio_container {
@@ -69,6 +69,35 @@
 
         &--results {
             background: none;
+        }
+    }
+    
+    &__results {
+        margin-top: 20px;
+
+        .result {
+            margin-bottom: 15px;
+
+            &__vote {
+                font-size: 16px;
+
+                span {
+                    color: $secondary-color;
+                }
+            }
+        }
+
+        label > span {
+            color: $secondary-color;
+        }
+
+        .progress {
+            height: 20px;
+
+            &__bar {
+                background: $secondary-color;
+                color: $main-color;
+            }
         }
     }
 }

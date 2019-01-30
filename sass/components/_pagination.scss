@@ -1,0 +1,41 @@
+.pagination {
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+        text-align: center;
+        line-height: 50px;
+        width: 50px;
+        height: 50px;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        transition: all .3s;
+        cursor: pointer;
+
+        &--prev {
+            background: $blue-color;
+            color: $main-color;
+
+            &:hover {
+                background: darken($blue-color, 10%) !important;
+            }
+        }
+
+        &--next {
+            background: $secondary-color;
+            color: $main-color;
+
+            &:hover {
+                background: darken($secondary-color, 10%) !important;
+            }
+        }
+
+        &:hover {
+            background: $border-color;
+        }
+    }
+
+    .active {
+        background: $border-color
+    }
+}
