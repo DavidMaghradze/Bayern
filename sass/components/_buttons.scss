@@ -126,6 +126,8 @@ button {
 }
 
 .comment__submit {
+    display: inline-block;
+    margin-top: 10px;
     background: $blue-color;
     padding: 8px;
     border-radius: 5px;

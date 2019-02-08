@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>მიუნხენის ბაიერნის ქართული ფან-კლუბი</title>
+</head>
+<body>
+    <div class="header container">
+        <div class="row">
+            <div class="header__logo">
+                <a href="#"><img src="img/logo.png" alt=""></a>
+            </div>
+            <div class="header__auth float-right">
+                <a href="#" class="header__button header__button--auth" data-toggle="modal" data-target="#topModal"><i class="far fa-user-circle"></i>ავტორიზაცია <!-- პროფილი --></a>
+                <!-- Modal For Unregisterd Users -->
+                <!-- <div class="modal fade" id="topModal" tabindex="-1" role="dialog" aria-labelledby="topModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ავტორიზაცია</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" class="modal-form">
+                                <section class="modal-form__input">
+                                    <span><i class="far fa-user"></i></span>
+                                    <input type="text" placeholder="სახელი...">
+                                </section>
+                                <section class="modal-form__input">
+                                    <span><i class="fas fa-unlock-alt"></i></span>
+                                    <input type="password" placeholder="პაროლი...">
+                                </section>
+                            </form>
+                            <footer class="modal__footer">
+                                <button class="modal__footer__btn modal__footer__btn--login">შესვლა</button>
+                                <a href="register.html" class="modal__footer__btn modal__footer__btn--register">რეგისტრაცია</a>
+                            </footer>
+                        </div>
+                    </div>
+                    </div>
+                </div> -->
+                <!-- End Modal For Unregisterd Users -->
+
+                <!-- Modal For Registerd Users -->
+                <div class="modal fade" id="topModal" tabindex="-1" role="dialog" aria-labelledby="topModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content modal-profile">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">გამარჯობა, <span>დავით</span></h5>
+
+                        if User has Acces to Admin Panel
+                        <a class="admin" href="#">ადმინ პანელი</a>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="profile-body-row">
+                                <div class="profile-body-main">
+                                    <a href="profile.html" class="profile-item">
+                                        პროფილი
+                                    </a href="">
+                                    <a href="" class="profile-item">
+                                        სიახლის დამატება
+                                    </a href="">
+                                </div>
+                                <div class="profile-body-thumbnail">
+                                    <img src="img/news1.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="profile-body-row">
+                                <a href="#" class="profile-item">შეტყობინებები: 0/<span>0</span></a href="#">
+                            </div>
+                            <div class="profile-body-row">
+                                <a href="#" class="profile-item logout">გასვლა</a href="#">
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- End Modal For Registerd Users -->
+                <a href="register.html" class="header__button header__button--register"><i class="fas fa-user-plus"></i>რეგისტრაცია</a>
+            </div>
+        </div>
+    </div>
+    <div class="topnav container">
+        <div class="row align-items-center nomargin">
+            <div class="cols-sm-12 col-xl-9 order2">
+                <div class="topnav__hamburger">
+                    <span></span>
+                </div>
+                <ul class="topnav__menu">
+                    <li><a href="index.html" class="active">მთავარი</a></li>
+                    <li><a href="tables.html">სეზონი</a></li>
+                    <li><a href="news.html">სიახლეები</a></li>
+                    <li class="dropdown"><a href="#">მულტიმედია<i class="toggle fas fa-angle-down"></i></a>
+                        <ul class="dropdown_menu">
+                            <a href="#"><i class="fas fa-angle-double-right"></i>ვიდეო გალერეა</a>
+                            <a href="#"><i class="fas fa-angle-double-right"></i>ფოტო გალერეა</a>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="club.html">კლუბი<i class="toggle fas fa-angle-down"></i></a>
+                        <ul class="dropdown_menu">
+                            <a href="squad.html"><i class="fas fa-angle-double-right"></i>შემადგენლობა</a>
+                            <a href="#"><i class="fas fa-angle-double-right"></i>ისტორია</a>
+                            <a href="#"><i class="fas fa-angle-double-right"></i>ტიტულები</a>
+                            <a href="#"><i class="fas fa-angle-double-right"></i>მთავარი მწვრთნელები</a>
+                            <a href="#"><i class="fas fa-angle-double-right"></i>პრეზიდენტები</a>
+                            <a href="#"><i class="fas fa-angle-double-right"></i>სტადიონი</a>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#">საიტი<i class="toggle fas fa-angle-down"></i></a>
+                        <ul class="dropdown_menu">
+                            <a href="#"><i class="fas fa-angle-double-right"></i>ჩვენ შესახებ</a>
+                            <a href="#"><i class="fas fa-angle-double-right"></i>რეკლამა</a>
+                            <a href="#"><i class="fas fa-angle-double-right"></i>კონტაქტი</a>
+                            <a href="#"><i class="fas fa-angle-double-right"></i>წესები</a>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-xl-3 order1">
+                <form class="topnav__search">
+                    <img src="img/geo-circle.png" alt="">
+                    <input type="text" placeholder="საძიებო ფრაზა...">
+                    <i class="fas fa-search"></i>
+                </form>
+            </div>
+        </div>
+    </div>
+    <main class="main container">
+        <div class="row nomargin nopadding">
+            <div class="col-sm-12 col-lg-8">
+                <header class="main__header main__header--news">
+                    <h2 class="main__header-title">ინფორმაცია მომხმარებელზე</h2>
+                </header>
+                <div class="container profile">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <figure class="profile__image">
+                                <img src="img/news1.jpg" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="profile__items">
+                                <li><strong>სახელი:</strong></li>
+                                <li><strong>რეგისტრაციის თარიღი:</strong></li>
+                                <li><strong>ბოლო ვიზიტი:</strong></li>
+                                <li><strong>ჯგუფი:</strong></li>
+                            </ul>
+                            <ul class="profile__stat">
+                                <li><strong>სიახლეების რაოდენობა:</strong></li>
+                                <a href="#">ყველა სიახლის ნახვა</a>
+                                <li><strong>კომენტარების რაოდენობა:</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container profile-edit">
+                    <header class="profile-edit__header">
+                        <i class="fas fa-arrow-alt-circle-down"></i>
+                        <span>პროფილის რედაქტირება</span>
+                    </header>
+                    <form action="" class="register__form">
+                        <div class="register__formfield">
+                            <label for="" class="register__formfield-title">მომხმარებლის სახელი</label><br>
+                            <input name="name" type="text">
+                            <button class="register__chekusername">შემოწმება</button>
+                        </div>
+                        <div class="register__formfield">
+                            <label for="" class="register__formfield-title">ძველი პაროლი</label><br>
+                            <input name="password" type="password">
+                        </div>
+                        <div class="register__formfield">
+                            <label for="" class="register__formfield-title">ახალი პაროლი</label><br>
+                            <input name="password" type="password">
+                        </div>
+                        <div class="register__formfield">
+                            <label for="" class="register__formfield-title">გაიმეორე პაროლი</label><br>
+                            <input name="password" type="password">
+                        </div>
+                        <button class="register__submit">დადასტურება</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-4">
+                <div class="matches container matches--default">
+                <header class="matches__header matches__header--default">
+                    <div class="matches__header-inner matches__header-inner--default">
+                        <span class="matches__header-next matches__header-next--default active"><i class="circle circle--next"></i> მომდევნო მატჩი</span>
+                        <span class="matches__header-prev matches__header-prev--default"><i class="circle circle--prev"></i> გასული მატჩი</span>
+                    </div>
+                </header>
+                <div class="matches__inner">
+                    <div class="matches__card matches__card--next">
+                        <div class="matches__card-content matches__card-content--default">
+                            <section class="matches__card-match matches__card-match--default">
+                                <div class="matches__card-team matches__card-team--default">
+                                    <div class="matches__card-logo matches__card-logo--default">
+                                        <img src="img/bayern.png" alt="">
+                                    </div>
+                                    <h2 class="matches__card-title matches__card-title--default">ბაიერნი</h2>
+                                </div>
+                                <div class="matches__card-info">
+                                    <span class="matches__card-vs matches__card-vs--default"><span class="matches__card-vs--default--v">V</span>S</span><br/>
+                                    <span class="matches__card-date">06.10.2018 / 23:15</span><br/>
+                                    <span class="matches__card-stadium"><img src="img/stadium-default.png" alt="">ალიანს არენა</span>
+                                </div>
+                                <div class="matches__card-team matches__card-team--default">
+                                    <div class="matches__card-logo matches__card-logo--default">
+                                        <img src="img/fortuna.png" alt="">
+                                    </div>
+                                    <h2 class="matches__card-title matches__card-title--default">ფორტუნა</h2>
+                                </div>
+                            </section>
+                            <footer class="matches__card-footer matches__card-footer--default">
+                                <div class="matches__card-footer__item float-left">
+                                    <img src="img/cl-default.png" alt="">
+                                    ჩემპიონთა ლიგა
+                                </div>
+                                <div class="matches__card-footer__item preview float-right">
+                                    <img src="img/preview.png" alt="">
+                                    <a href="#">პრევიუ</a>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="matches__card matches__card--prev">
+                        <div class="matches__card-content matches__card-content--default">
+                            <section class="matches__card-match matches__card-match--default">
+                                <div class="matches__card-team matches__card-team--default">
+                                    <div class="matches__card-logo matches__card-logo--default">
+                                        <img src="img/fortuna.png" alt="">
+                                    </div>
+                                    <h2 class="matches__card-title matches__card-title--default">ფორტუნა</h2>
+                                </div>
+                                <div class="matches__card-info">
+                                    <span class="matches__card-vs"><span class="matches__card-vs--default--v">4</span>:1</span><br/>
+                                    <span class="matches__card-date">11/23/2018 15:45</span><br/>
+                                    <span class="matches__card-stadium"><img src="img/stadium-default.png" alt=""> სიგნალ იდუნა პარკი</span>
+                                </div>
+                                <div class="matches__card-team matches__card-team--default">
+                                    <div class="matches__card-logo matches__card-logo--default">
+                                        <img src="img/bayern.png" alt="">
+                                    </div>
+                                    <h2 class="matches__card-title matches__card-title--default">ბაიერნი</h2>
+                                </div>
+                            </section>
+                            <footer class="matches__card-footer matches__card-footer--default">
+                                <div class="matches__card-footer__item float-left">
+                                    <img src="img/cl-default.png" alt="">
+                                    ჩემპიონთა ლიგა
+                                </div>
+                                <div class="matches__card-footer__item preview float-right">
+                                    <img src="img/preview.png" alt="">
+                                    <a href="#">რევიუ</a>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="players container">
+                    <header class="main__header">
+                        <ul class="players__header">
+                            <li class="active goalscorers">ბომბარდირები</li>
+                            <li class="assistants">ასისტენტები</li>
+                            <li class="cards">ბარათები</li>
+                        </ul>
+                    </header>
+                    <div class="players__content">
+                        <section id="goalscorers" class="players__content-item">
+                            <div class="players__player players__player--first">
+                                <figure class="players__image">
+                                    <img src="img/lewy.jpg" alt="">
+                                    <div class="players__rank">1</div>
+                                </figure>
+                                <div class="players__desc">
+                                    <h4 class="players__title">რობერტ ლევანდოვსკი</h4>
+                                    <span class="players__stat">გოლი: 8</span>
+                                </div>
+                            </div>
+                            <div class="players__player">
+                                <figure class="players__image">
+                                    <img src="img/james.jpg" alt="">
+                                    <div class="players__rank">2</div>
+                                </figure>
+                                <div class="players__desc">
+                                    <h4 class="players__title">რობერტ ლევანდოვსკი</h4>
+                                    <span class="players__stat">გოლი: 8</span>
+                                </div>
+                            </div>
+                            <div class="players__player">
+                                <figure class="players__image">
+                                    <img src="img/coman.jpg" alt="">
+                                    <div class="players__rank">3</div>
+                                </figure>
+                                <div class="players__desc">
+                                    <h4 class="players__title">რობერტ ლევანდოვსკი</h4>
+                                    <span class="players__stat">გოლი: 8</span>
+                                </div>
+                            </div>
+                            <div class="players__player">
+                                <figure class="players__image">
+                                    <img src="img/jo.jpg" alt="">
+                                    <div class="players__rank">4</div>
+                                </figure>
+                                <div class="players__desc">
+                                    <h4 class="players__title">რობერტ ლევანდოვსკი</h4>
+                                    <span class="players__stat">გოლი: 8</span>
+                                </div>
+                            </div>
+                            <div class="players__player">
+                                <figure class="players__image">
+                                    <img src="img/muller.jpg" alt="">
+                                    <div class="players__rank">5</div>
+                                </figure>
+                                <div class="players__desc">
+                                    <h4 class="players__title">რობერტ ლევანდოვსკი</h4>
+                                    <span class="players__stat">გოლი: 8</span>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="assistants" class="players__content-item">
+                            <div class="players__player players__player--first">
+                                <figure class="players__image">
+                                    <img src="img/lewy.jpg" alt="">
+                                    <div class="players__rank">1</div>
+                                </figure>
+                                <div class="players__desc">
+                                    <h4 class="players__title">ხამეს როდრიგესი</h4>
+                                    <span class="players__stat">ასისტი: 8</span>
+                                </div>
+                            </div>
+                            <div class="players__player">
+                                <figure class="players__image">
+                                    <img src="img/james.jpg" alt="">
+                                    <div class="players__rank">2</div>
+                                </figure>
+                                <div class="players__desc">
+                                    <h4 class="players__title">ხამეს როდრიგესი</h4>
+                                    <span class="players__stat">ასისტი: 8</span>
+                                </div>
+                            </div>
+                            <div class="players__player">
+                                <figure class="players__image">
+                                    <img src="img/coman.jpg" alt="">
+                                    <div class="players__rank">3</div>
+                                </figure>
+                                <div class="players__desc">
+                                    <h4 class="players__title">ხამეს როდრიგესი</h4>
+                                    <span class="players__stat">ასისტი: 8</span>
+                                </div>
+                            </div>
+                            <div class="players__player">
+                                <figure class="players__image">
+                                    <img src="img/jo.jpg" alt="">
+                                    <div class="players__rank">4</div>
+                                </figure>
+                                <div class="players__desc">
+                                    <h4 class="players__title">ხამეს როდრიგესი</h4>
+                                    <span class="players__stat">ასისტი: 8</span>
+                                </div>
+                            </div>
+                            <div class="players__player">
+                                <figure class="players__image">
+                                    <img src="img/muller.jpg" alt="">
+                                    <div class="players__rank">5</div>
+                                </figure>
+                                <div class="players__desc">
+                                    <h4 class="players__title">ხამეს როდრიგესი</h4>
+                                    <span class="players__stat">ასისტი: 8</span>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="cards" class="players__content-item">
+                            <div class="players__player players__player--first">
+                                <figure class="players__image">
+                                    <img src="img/lewy.jpg" alt="">
+                                    <div class="players__rank">1</div>
+                                </figure>
+                                <div class="players__desc">
+                                    <h4 class="players__title">რობერტ ლევანდოვსკი</h4>
+                                    <span class="players__stat">
+                                        <img src="img/yellow.png" alt=""> 1
+                                        <img src="img/red.png" alt=""> 2
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="players__player">
+                                <figure class="players__image">
+                                    <img src="img/james.jpg" alt="">
+                                    <div class="players__rank">2</div>
+                                </figure>
+                                <div class="players__desc">
+                                    <h4 class="players__title">რობერტ ლევანდოვსკი</h4>
+                                    <span class="players__stat">
+                                        <img src="img/yellow.png" alt=""> 1
+                                        <img src="img/red.png" alt=""> 2
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="players__player">
+                                <figure class="players__image">
+                                    <img src="img/coman.jpg" alt="">
+                                    <div class="players__rank">3</div>
+                                </figure>
+                                <div class="players__desc">
+                                    <h4 class="players__title">რობერტ ლევანდოვსკი</h4>
+                                    <span class="players__stat">
+                                        <img src="img/yellow.png" alt=""> 1
+                                        <img src="img/red.png" alt=""> 2
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="players__player">
+                                <figure class="players__image">
+                                    <img src="img/jo.jpg" alt="">
+                                    <div class="players__rank">4</div>
+                                </figure>
+                                <div class="players__desc">
+                                    <h4 class="players__title">რობერტ ლევანდოვსკი</h4>
+                                    <span class="players__stat">
+                                        <img src="img/yellow.png" alt=""> 1
+                                        <img src="img/red.png" alt=""> 2
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="players__player">
+                                <figure class="players__image">
+                                    <img src="img/muller.jpg" alt="">
+                                    <div class="players__rank">5</div>
+                                </figure>
+                                <div class="players__desc">
+                                    <h4 class="players__title">რობერტ ლევანდოვსკი</h4>
+                                    <span class="players__stat">
+                                        <img src="img/yellow.png" alt=""> 1
+                                        <img src="img/red.png" alt=""> 2
+                                    </span>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="absents container">
+                    <header class="main__header">
+                        <img src="img/absents.png" alt="">
+                        <h2 class="main__header-title">დანაკლისები</h2>
+                    </header>
+                    <section class="absents__content">
+                        <header class="absents__header">
+                            <img src="img/injuries.png" alt="">
+                            <h3 class="absents__header-title">ტრავმები</h3>
+                        </header>
+                        <div class="absents__item">
+                            <img src="img/player.png" alt="">
+                            არიენ რობენი
+                        </div>
+                        <div class="absents__item">
+                            <img src="img/player.png" alt="">
+                            კორენტენ ტოლისო
+                        </div>
+                        <div class="absents__item">
+                            <img src="img/player.png" alt="">
+                            კინგსლი კომანი
+                        </div>
+                    </section>
+                    <section class="absents__content">
+                        <header class="absents__header">
+                            <img src="img/cards.png" alt="">
+                            <h3 class="absents__header-title">ყვითელი/წითელი ბარათი</h3>
+                        </header>
+                        <div class="absents__item noplayers">
+                            <!-- <img src="img/player.png" alt=""> -->
+                            დისკვალიფიკაცირებული მოთამაშე არ მოიძებნა
+                        </div>
+                    </section>
+                </div>
+                <div class="table container">
+                    <header class="main__header">
+                        <img src="img/bundesliga.png" alt="">
+                        <h2 class="main__header-title">ბუნდესლიგა</h2>
+                    </header>
+                    <div class="table__inner">
+                        <section class="table__header">
+                            <div class="table__header-item">
+                                <span>N</span>
+                                <span>კლუბი</span>
+                            </div>
+                            <div class="table__header-item">
+                                <span class="table__games">თ</span>
+                                <span class="table__wins">ქ</span>
+                            </div>
+                        </section>
+                        <div>
+                            <section class="table__content">
+                                <div class="table__position">
+                                    <div class="table__rank">1</div>
+                                    <img src="img/fortuna.png" alt="">
+                                    <h3 class="table__team">დორტმუნდი</h3>
+                                </div>
+                                <div class="table__nums">
+                                    <span>12</span>
+                                    <span>30</span>
+                                </div>
+                            </section>
+                            <section class="table__content">
+                                <div class="table__position">
+                                    <div class="table__rank">2</div>
+                                    <img src="img/bayern.png" alt="">
+                                    <h3 class="table__team">გლადბახი</h3>
+                                </div>
+                                <div class="table__nums">
+                                    <span>12</span>
+                                    <span>27</span>
+                                </div>
+                            </section>
+                            <section class="table__content">
+                                <div class="table__position">
+                                    <div class="table__rank">3</div>
+                                    <img src="img/bayern.png" alt="">
+                                    <h3 class="table__team">ჰოფენჰაიმი</h3>
+                                </div>
+                                <div class="table__nums">
+                                    <span>12</span>
+                                    <span>27</span>
+                                </div>
+                            </section>
+                            <section class="table__content">
+                                <div class="table__position">
+                                    <div class="table__rank">4</div>
+                                    <img src="img/bayern.png" alt="">
+                                    <h3 class="table__team">ჰერტა</h3>
+                                </div>
+                                <div class="table__nums">
+                                    <span>12</span>
+                                    <span>27</span>
+                                </div>
+                            </section>
+                            <section class="table__content">
+                                <div class="table__position">
+                                    <div class="table__rank">5</div>
+                                    <img src="img/bayern.png" alt="">
+                                    <h3 class="table__team">ბაიერნი</h3>
+                                </div>
+                                <div class="table__nums">
+                                    <span>12</span>
+                                    <span>27</span>
+                                </div>
+                            </section>
+                            <section class="table__content">
+                                <div class="table__position">
+                                    <div class="table__rank">6</div>
+                                    <img src="img/bayern.png" alt="">
+                                    <h3 class="table__team">ჰოფენჰაიმი</h3>
+                                </div>
+                                <div class="table__nums">
+                                    <span>12</span>
+                                    <span>27</span>
+                                </div>
+                            </section>
+                            <section class="table__content">
+                                <div class="table__position">
+                                    <div class="table__rank">7</div>
+                                    <img src="img/bayern.png" alt="">
+                                    <h3 class="table__team">ჰოფენჰაიმი</h3>
+                                </div>
+                                <div class="table__nums">
+                                    <span>12</span>
+                                    <span>27</span>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="poll container">
+                    <header class="main__header">
+                        <img src="img/poll.png" alt="">
+                        <h2 class="main__header-title">გამოკითხვა</h2>
+                    </header>
+                    <section class="poll__item poll__item--questions">
+                        <h3 class="poll__title">კმაყოფილი ხართ თუ არა ნიკო კოვაჩის მუშაობით ?</h3>
+                        <div class="poll__answers">
+                            <label class="radio_container">კმაყოფილი ვარ
+                                <input type="radio" name="radio" checked="checked"/>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radio_container">არ ვარ კმაყოფილი
+                                <input type="radio" name="radio"/>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radio_container">არ ვარ კმაყოფილი
+                                <input type="radio" name="radio"/>
+                                <span class="checkmark"></span>
+                            </label>
+                            <div class="poll__buttons">
+                                <button class="poll__button poll__button--submit">ხმის მიცემა</button>
+                                <button class="poll__button poll__button--results">
+                                    <img src="img/poll-results.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <!-- <div class="poll__results">
+                            <div class="result">
+                                <label>კმაყოფილი ვარ <span>40%</span></label>
+                                <div class="progress">
+                                    <div class="progress__bar" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <div class="result">
+                                <label>კმაყოფილი ვარ <span>30%</span></label>
+                                <div class="progress">
+                                    <div class="progress__bar" style="width: 30%"></div>
+                                </div>
+                            </div>
+                            <div class="result">
+                                <label>კმაყოფილი ვარ <span>30%</span></label>
+                                <div class="progress">
+                                    <div class="progress__bar" style="width: 30%"></div>
+                                </div>
+                            </div>
+                            <h3 class="result__vote">ხმა მისცა: <span>150</span></h3>
+                        </div> -->
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-9">
+                <section class="footer__item">
+                    <a href="#"><span><i class="fab fa-facebook-square"></i>FACEBOOK</span></a>
+                    <a href="#"><span><img src="img/top.png" alt=""></span></a>
+                </section>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="script/app.js"></script>
+    <script src="script/profile.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
